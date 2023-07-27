@@ -4,6 +4,11 @@
     margin: 1px 20px;
 /* background-color: red; */
 }
+.dice-img
+{
+    cursor: pointer;
+    margin-left: 23px;
+}
 .right{
     margin-left: 133px;
 }
@@ -16,15 +21,6 @@ margin-left: 53px;
 .Left{
     margin-top: 103px;
     margin-right: 40px;
-}
-.btn-select{
-    padding: 20px 20px;
-    font-size: 35px;
-    border-radius: 10px;
-    background-color: black;
-    color: white;
-    margin-left: 23px;
-    transition: 0.4s background ease-in;
 }
 .Left p{
     font-weight: 1000px;
@@ -43,7 +39,7 @@ margin-left: 53px;
 height: auto;
     justify-content: center;
     flex-direction: column;
-    margin-left: 533px;
+    margin-left: 583px;
 }
 .Show-reset{
     

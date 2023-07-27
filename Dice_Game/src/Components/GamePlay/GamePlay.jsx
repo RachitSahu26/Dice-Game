@@ -1,9 +1,16 @@
 import React from 'react'
 import "./GamePLay.css";
+import Numbers from '../NumberBox/Numbers';
+
+
 
 export default function GamePlay() {
 
-  const arrayNumber = [1, 2, 3, 4, 5, 6];
+
+
+ const generateRandomNumber=(max,min)=>{
+return Math.floor(Math.random()*(min-max)+min);
+  }
   return (
     <>
 
@@ -14,20 +21,7 @@ export default function GamePlay() {
         </div>
 
         <div className="Left">
-          { arrayNumber.map((value, i) => {
-              <button className='btn-select'>{value}</button>
-
-            })}
-          {/*       
-          <button className='btn-select'>3</button>
-          <button className='btn-select'>1</button>
-          <button className='btn-select'>2</button>
-      
-          <button className='btn-select'>4</button>
-          <button className='btn-select'>5</button>
-          <button className='btn-select'>6</button> */}
-
-
+          <Numbers />
           <p>Select Number</p>
         </div>
 
@@ -37,8 +31,8 @@ export default function GamePlay() {
       <div className="main">
 
         <div className="play-img">
-
-          <a href="https://www.freepnglogos.com/pics/dice" title="Image from freepnglogos.com"><img src="https://www.freepnglogos.com/uploads/dice-png/dice-png-images-are-download-crazypngm-crazy-png-images-download-32.png" width="300" alt="dice png images are download crazypngm crazy png images download" /></a>
+          <img src="/Images/1.png" width={100} className='dice-img' 
+          onClick={()=>generateRandomNumber()}/>
           <p>Click on Dice to Roll</p>
         </div>
         <div className="btn-area">
@@ -56,3 +50,4 @@ export default function GamePlay() {
 
   )
 }
+
