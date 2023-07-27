@@ -1,14 +1,15 @@
+import { useState } from "react";
+import DiceGame from "./Components/DiceGame/DiceGame";
+import GamePlay from "./Components/GamePlay/GamePlay";
 
-import styled from 'styled-components';
-const Button =styled.button`
-background-color:red;
-
-`;
 export default function App() {
+
+  const [isGamePlay, setIsGamePlay] = useState(false);
+  const toggleGamePlay = () => {
+    setIsGamePlay((prev) => !prev);
+  }
+
   return (
-  <>
-  <Button>sdfsdf</Button>
-  
-  </>
+<> {isGamePlay ?  <GamePlay />:<DiceGame toggle={toggleGamePlay}/>}</>
   )
 }

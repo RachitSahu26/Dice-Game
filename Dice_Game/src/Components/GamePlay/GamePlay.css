@@ -1,0 +1,68 @@
+.play-main{
+    display: flex;
+    justify-content: space-between;
+    margin: 1px 20px;
+/* background-color: red; */
+}
+.right{
+    margin-left: 133px;
+}
+.right h1{
+font-size:100px;
+margin-left: 53px;
+}.right p{
+    font-size: 35px;
+}
+.Left{
+    margin-top: 103px;
+    margin-right: 40px;
+}
+.btn-select{
+    padding: 20px 20px;
+    font-size: 35px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    margin-left: 23px;
+    transition: 0.4s background ease-in;
+}
+.Left p{
+    font-weight: 1000px;
+    font-size: 30px;
+    font-family:sans-serif ;
+
+    margin-left: 300px;
+}
+
+
+.main{
+    /* background-color: aqua; */
+    display: flex;
+    width: 323px;
+    align-items: center;
+height: auto;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 533px;
+}
+.Show-reset{
+    
+    padding:  10px 20px;
+    font-size: 35px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    margin-left: 23px;
+    transition: 0.4s background ease-in;
+
+}
+.Resect-score{
+    
+    padding: 10px 20px;
+    font-size: 35px;
+    border-radius: 10px;
+    background-color: white;
+    color:black;
+    margin-left: 23px;
+    transition: 0.4s background ease-in;
+}

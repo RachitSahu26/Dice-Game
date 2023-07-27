@@ -1,0 +1,26 @@
+.start-game{
+    display: flex;
+    justify-content: space-between;
+    padding: 2% 10%;
+}.dice-title{
+    margin-top: 133px;
+}
+.dice-title h1{
+    font-size: 85px;
+}
+.btn{
+    padding: 5px 10px;
+    font-size: 35px;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    margin-left: 163px;
+    transition: 0.4s background ease-in;
+
+}
+.btn:hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    transition: 0.3s background ease-in;
+}
