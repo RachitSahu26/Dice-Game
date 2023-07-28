@@ -4,11 +4,21 @@
     margin: 1px 20px;
 /* background-color: red; */
 }
-.dice-img
+.dice-img-play
 {
     cursor: pointer;
     margin-left: 23px;
+    transition: 0.5s;
 }
+.dice-img-play:hover
+{
+    cursor: pointer;
+    scale: 1.3;
+}
+
+
+
+
 .right{
     margin-left: 133px;
 }
@@ -62,3 +72,20 @@ height: auto;
     margin-left: 23px;
     transition: 0.4s background ease-in;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* {`/Images/${currentDice}.png`} */
+/* "/public/Images/1.png" */

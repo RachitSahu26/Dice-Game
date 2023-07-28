@@ -1,16 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./GamePLay.css";
 import Numbers from '../NumberBox/Numbers';
+import Dice from '../dice/Dice';
 
 
 
 export default function GamePlay() {
 
+  const [score,setScore]=useState();
+  const [currentDice, setCurrentDice] = useState(1);
+
+  const [selectNumber, setSelectNumber] = useState();
 
 
- const generateRandomNumber=(max,min)=>{
-return Math.floor(Math.random()*(min-max)+min);
-  }
+
+
+
+
+  const generateRandomNumber = (max, min) => {
+    console.log(Math.floor(Math.random() * (max - min) + min))
+    return Math.floor(Math.random() * (max - min) + min);
+}
+const diceRole = () => {
+    const random = generateRandomNumber(1, 7);
+
+    setCurrentDice((prev) => random);
+
+
+}
+
+
+
+
+
+
+
   return (
     <>
 
@@ -21,7 +45,11 @@ return Math.floor(Math.random()*(min-max)+min);
         </div>
 
         <div className="Left">
-          <Numbers />
+          <Numbers
+            selectNumber={selectNumber}
+            diceRole={diceRole}
+
+          />
           <p>Select Number</p>
         </div>
 
@@ -30,11 +58,13 @@ return Math.floor(Math.random()*(min-max)+min);
       </header>
       <div className="main">
 
-        <div className="play-img">
-          <img src="/Images/1.png" width={100} className='dice-img' 
-          onClick={()=>generateRandomNumber()}/>
-          <p>Click on Dice to Roll</p>
+        <div className="dice-img-play">
+          <Dice currentDice={currentDice}
+
+            setCurrentDice={setCurrentDice}
+          />
         </div>
+        <p>Click on Dice to Roll</p>
         <div className="btn-area">
           <button className='Resect-score' >Reset Score</button>
           <br></br>
