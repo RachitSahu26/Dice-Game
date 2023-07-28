@@ -2,32 +2,46 @@ import React, { useState } from 'react'
 import "./GamePLay.css";
 import Numbers from '../NumberBox/Numbers';
 import Dice from '../dice/Dice';
+import Score from '../Score/Score';
 
 
 
 export default function GamePlay() {
-
-  const [score,setScore]=useState();
-  const [currentDice, setCurrentDice] = useState(1);
-
   const [selectNumber, setSelectNumber] = useState();
 
-
-
-
+  const [score, setScore] = useState(0);
+  const [currentDice, setCurrentDice] = useState(1);
+  const [error, setError] = useState("");
 
 
   const generateRandomNumber = (max, min) => {
     console.log(Math.floor(Math.random() * (max - min) + min))
     return Math.floor(Math.random() * (max - min) + min);
-}
-const diceRole = () => {
-    const random = generateRandomNumber(1, 7);
+  }
+
+
+
+  const diceRole = () => {
+
+    if (!selectNumber) {
+      setError("Hey,Player you have not selected any number")
+      return;
+    }
+setError("")
+
+
+const random = generateRandomNumber(1, 7);
 
     setCurrentDice((prev) => random);
 
+    if (selectNumber === random) {
+      setScore((prev) => prev + random);
+    } else {
 
-}
+      setScore((prev) => prev - 2);
+    }
+    setSelectNumber(undefined)
+  }
 
 
 
@@ -39,15 +53,13 @@ const diceRole = () => {
     <>
 
       <header className='play-main'>
-        <div className="right">
-          <h1>0</h1>
-          <p>Total Score</p>
-        </div>
+        <Score score={score} />
 
         <div className="Left">
           <Numbers
+            seterror={error}
             selectNumber={selectNumber}
-            diceRole={diceRole}
+            setSelectNumber={setSelectNumber}
 
           />
           <p>Select Number</p>
@@ -61,7 +73,7 @@ const diceRole = () => {
         <div className="dice-img-play">
           <Dice currentDice={currentDice}
 
-            setCurrentDice={setCurrentDice}
+            diceRole={diceRole}
           />
         </div>
         <p>Click on Dice to Roll</p>
