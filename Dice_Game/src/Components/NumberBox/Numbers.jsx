@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import styled from "styled-components";
 
-export default function Numbers({selectNumber, setSelectNumber}) {
+export default function Numbers({error,selectNumber, setSelectNumber}) {
 
     const Numbers = [1, 2, 3, 4, 5, 6];
     return (
 
         <NumberSelector >
+            <p className='erorr-para'>{error}</p>
             <div className='flex'>
 
                 {
@@ -32,6 +33,13 @@ const NumberSelector = styled.div`
  display:flex;   
     gap:24px; 
     margin-left: 63px;
+
+}
+
+
+.erorr-para{
+color: red;
+font-size: 25px;
 }
 `
 
