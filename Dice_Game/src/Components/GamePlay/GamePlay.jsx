@@ -3,6 +3,7 @@ import "./GamePLay.css";
 import Numbers from '../NumberBox/Numbers';
 import Dice from '../dice/Dice';
 import Score from '../Score/Score';
+import ShowRule from '../Show rule/ShowRule';
 
 
 
@@ -12,6 +13,8 @@ export default function GamePlay() {
   const [score, setScore] = useState(0);
   const [currentDice, setCurrentDice] = useState(1);
   const [error, setError] = useState("");
+  const [showRules, setShowRules] = useState(false);
+
 
 
   const generateRandomNumber = (max, min) => {
@@ -21,16 +24,17 @@ export default function GamePlay() {
 
 
 
+
   const diceRole = () => {
 
     if (!selectNumber) {
       setError("Hey,Player you have not selected any number")
       return;
     }
-setError("")
 
 
-const random = generateRandomNumber(1, 7);
+
+    const random = generateRandomNumber(1, 7);
 
     setCurrentDice((prev) => random);
 
@@ -43,6 +47,10 @@ const random = generateRandomNumber(1, 7);
     setSelectNumber(undefined)
   }
 
+
+  const resetScore = () => {
+    setScore(0);
+  }
 
 
 
@@ -57,7 +65,8 @@ const random = generateRandomNumber(1, 7);
 
         <div className="Left">
           <Numbers
-            seterror={error}
+            setError={setError}
+            error={error}
             selectNumber={selectNumber}
             setSelectNumber={setSelectNumber}
 
@@ -78,14 +87,29 @@ const random = generateRandomNumber(1, 7);
         </div>
         <p>Click on Dice to Roll</p>
         <div className="btn-area">
-          <button className='Resect-score' >Reset Score</button>
+          <button className='Resect-score' onClick={resetScore} >Reset Score</button>
           <br></br>
           <br></br>
-          <button className='Show-reset'>Show Rules</button>
+          <button className='Show-reset'
+            onClick={() => setShowRules((prev) => !prev)}
+          >
+            {showRules ? "Hide" : "Show "}
+
+            Rules</button>
 
         </div>
 
       </div>
+     
+        {showRules && <ShowRule />}
+
+
+
+
+
+
+
+
 
 
     </>

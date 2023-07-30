@@ -1,9 +1,15 @@
 import React, { useState } from 'react'
 import styled from "styled-components";
 
-export default function Numbers({error,selectNumber, setSelectNumber}) {
+export default function Numbers({ setError, error, selectNumber, setSelectNumber }) {
 
     const Numbers = [1, 2, 3, 4, 5, 6];
+
+
+    const errorHandelor = (value) => {
+        setSelectNumber(value)
+        setError("")
+    }
     return (
 
         <NumberSelector >
@@ -14,7 +20,7 @@ export default function Numbers({error,selectNumber, setSelectNumber}) {
                     Numbers.map((value, i) => (
                         <Box
                             isselected={value === selectNumber}
-                            onClick={() => setSelectNumber(value)}
+                            onClick={() => errorHandelor(value)}
 
                         >{value}</Box>
 
@@ -31,14 +37,19 @@ export default function Numbers({error,selectNumber, setSelectNumber}) {
 const NumberSelector = styled.div`
 .flex{
  display:flex;   
+ /* background-color: green; */
+
     gap:24px; 
-    margin-left: 63px;
+    margin-left: 333px;
 
 }
 
 
 .erorr-para{
+    /* background-color: aqua; */
 color: red;
+margin-top: -22px;
+/* margin-right: 73px; */
 font-size: 25px;
 }
 `
@@ -54,4 +65,5 @@ color: ${(props) => props.isselected ? "white" : "black"};
 cursor: pointer;
     height: 50px;
 display: grid;
+
 `

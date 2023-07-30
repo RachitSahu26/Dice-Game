@@ -1,0 +1,30 @@
+
+.gamae-rule{
+    background-color: rgb(239, 239, 239);
+    max-width: 500px;
+    padding: 20px;
+    margin: 0 auto;
+    border-radius: 33px;
+    margin-top: 23px;
+/* margin-left: 33px; */
+transition: 0.2s;
+}
+
+.gamae-rule h1{
+    font-size: 30px;
+    text-align: center;
+    line-height: 50px;
+
+}
+.gamae-rule p{
+    font-size: 20px;
+}
+
+
+
+
+.gamae-rule:hover{
+    border: 1.1px solid rgb(80, 80, 244);
+    box-shadow: 2px 2px 10px 2px rgb(80, 80, 244);
+}
+
